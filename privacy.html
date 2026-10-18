@@ -17,13 +17,13 @@
   <p>AI Team DRI Bridge ("the app") is a personal tool operated by one individual, the owner of the GitHub account <a href="https://github.com/Khloe-AI-Trader">Khloe-AI-Trader</a>, for their own Google account. The app has no other users and no public sign-up.</p>
 
   <h2>2. Google user data the app accesses</h2>
-  <p>With the owner's consent, the app requests the Google Drive scope <code>https://www.googleapis.com/auth/drive</code>. In practice it works only inside one folder that the owner selects with the Google Picker (named <code>00_DRI_BRIDGE</code>). Within that folder it:</p>
+  <p>With the owner's consent, the app requests the Google Drive scope <code>https://www.googleapis.com/auth/drive</code>. The app is configured to work only inside one folder that the owner selects with the Google Picker (named <code>00_DRI_BRIDGE</code>); its Drive queries are restricted to that folder. Within that folder it:</p>
   <ul>
     <li>lists and reads request files and two coordination documents (<code>DRI_INBOX</code>, <code>DRI_OUTBOX</code>);</li>
     <li>creates small JSON files for dispatch, acknowledgement and result records;</li>
     <li>updates the outbox document with status entries.</li>
   </ul>
-  <p>The app does not read or modify files outside that folder, does not access Gmail, Calendar, Contacts or any other Google service, and does not collect profile information beyond what Google's sign-in returns to complete authorization.</p>
+  <p>The Drive scope Google offers for this purpose is broader than that single folder, but the app is not designed to read or modify files outside it. The app does not access Gmail, Calendar, Contacts or any other Google service.</p>
 
   <h2>3. How the data is used</h2>
   <p>The data is used only to run the app's single feature: exchanging task requests, acknowledgements, status and results between the owner's AI assistants. It is not used for advertising, profiling, or any purpose unrelated to that feature.</p>
@@ -55,7 +55,7 @@
   </ul>
 
   <h2>8. Security</h2>
-  <p>Credentials are kept only on the owner's computer, are not included in any public repository or web page, and are not written to logs. The app requests the access it needs and nothing more.</p>
+  <p>Credentials are kept on the owner's computer and are not included in this website or its repository. The app's task logs record only fixed status markers, not credentials. The Drive access requested is the scope described in section 2.</p>
 
   <h2>9. Changes</h2>
   <p>If the app's use of data changes, this page will be updated and the date above revised.</p>
